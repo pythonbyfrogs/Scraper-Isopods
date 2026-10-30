@@ -5,6 +5,7 @@ This 'web scraper' aims to collect ads from Brazilian isopod (roly polys) seller
 # ⚙️ Installation
 ### Prerequisites
 * Python 3.12.3
+* Git
 * pip (pip3 in linux)
 * Libraries in 'requirements.txt'
 
