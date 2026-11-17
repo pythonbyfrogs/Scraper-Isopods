@@ -1,7 +1,18 @@
+
 import pandas as pd
+from datetime import datetime
+from pathlib import Path
+
 from Scrapers import berre_terrarios
 from Scrapers import animal_pet_store
 from Scrapers import mercado_morph
+
+# Saving in "Dataframes" folder
+data_folder = Path("Dataframes")
+data_folder.mkdir(exist_ok=True)
+
+date = datetime.now().strftime("%Y-%m-%d")
+
 
 def main():
     all_products = []
@@ -35,26 +46,34 @@ def main():
         return
 
     dataframe = pd.DataFrame(all_products)
+
     print("\nChoose the export format:")
     print("1 - CSV")
     print("2 - Excel (.xlsx)")
+
     choice = input("Your choice (1/2): ").strip()
 
     if choice == "1":
+        filename = data_folder / f"Isopods_{date}.csv"
+
         dataframe.to_csv(
-            "isopodes.csv",
+            filename,
             index=False,
             sep=";",
             encoding="utf-8-sig"
         )
-        print("\nData exported to isopodes.csv")
+
+        print(f"\nData exported to {filename}")
 
     elif choice == "2":
+        filename = data_folder / f"Isopods_{date}.xlsx"
+
         dataframe.to_excel(
-            "isopodes.xlsx",
+            filename,
             index=False
         )
-        print("\nData exported to isopodes.xlsx")
+
+        print(f"\nData exported to {filename}")
 
     else:
         print("\nInvalid option. No file was exported.")
