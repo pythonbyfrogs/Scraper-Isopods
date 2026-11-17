@@ -13,7 +13,7 @@ This 'web scraper' aims to collect ads from Brazilian isopod (roly polys) seller
 1. Clone the repository:
  ```bash
 git clone https://github.com/pythonbyfrogs/Scraper-Isopods
-cd "Scraper de Isópodes"
+cd "Scraper-Isopods"
 ```
 2. Install dependencies:
 ```bash
